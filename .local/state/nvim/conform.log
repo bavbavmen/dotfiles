@@ -1,0 +1,2 @@
+2025-03-25 22:43:18[ERROR] Formatter 'stylua' error: error: could not format from stdin: failed to format from stdin: error parsing: unexpected token `{` (4:1 to 4:2), unexpected token, this needs to be a statement
+
