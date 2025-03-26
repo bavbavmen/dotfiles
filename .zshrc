@@ -8,6 +8,8 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/nvim-linux-x86_64/bin/:$PATH
 
 # Path to your Oh My Zsh installation.
+
+export ZSH_CUSTOM="$HOME/.config/zsh/custom"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
