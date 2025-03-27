@@ -71,7 +71,7 @@ alias g=grep
 # scripts
 bindkey '^ ' autosuggest-accept
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
 
 
 
