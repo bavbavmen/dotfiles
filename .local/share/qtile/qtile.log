@@ -1,0 +1,5 @@
+2025-03-26 22:50:06,828 ERROR libqtile manager.py:spawn():L1315 couldn't find `rofi`
+2025-03-26 22:50:08,469 ERROR libqtile manager.py:spawn():L1315 couldn't find `rofi`
+2025-03-26 22:50:27,237 WARNING libqtile core.py:_xpoll():L358 Shutting down due to disconnection from X server
+2025-03-26 22:50:27,238 WARNING libqtile core.py:graceful_shutdown():L905 Server disconnected, couldn't close windows gracefully.
+2025-03-26 22:50:27,248 WARNING libqtile lifecycle.py:_atexit():L38 Qtile will now terminate
