@@ -6,11 +6,12 @@ fi
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/nvim-linux-x86_64/bin/:$PATH
+export PATH=$HOME/.local/lib/nvim-linux-x86_64/bin/:$PATH
 
 # Path to your Oh My Zsh installation.
 
 export ZSH_CUSTOM="$HOME/.config/zsh/custom"
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/ohmyzsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(zsh-autosuggestions aliases ubuntu systemadmin sudo git history ansible vscode docker docker-compose zsh-fzf-history-search zsh-syntax-highlighting)
@@ -70,7 +71,7 @@ alias g=grep
 # scripts
 bindkey '^ ' autosuggest-accept
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
 
 
 
