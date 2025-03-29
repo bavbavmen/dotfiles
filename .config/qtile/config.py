@@ -163,9 +163,9 @@ keys = [
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
-#group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 #group_labels = ["DEV", "WWW", "SYS", "DOC", "VBOX", "CHAT", "MUS", "VID", "GFX", "MISC"]
-group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
+# group_labels = ["", "", "", "", "", "", "⛨ ", "", "", "⛨"]
 #group_labels = ["", " ", " ", " ", " ", " ", "⛨ ", " ", " "]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
@@ -196,13 +196,20 @@ for i in groups:
                 lazy.window.togroup(i.name, switch_group=False),
                 desc="Move focused window to group {}".format(i.name),
             ),
+            # mod1 + cntl + letter of group = switch to group and move focused window
+            Key(
+                [mod, "control"],
+                i.name,
+                lazy.window.togroup(i.name, switch_group=True),
+                desc="Move focused window to group and follow {}".format(i.name),
+            ),
         ]
     )
 
-colors = colors.DoomOne
+colors = colors.Catppuccin_Mocha
 
 layout_theme = {"border_width": 2,
-                "margin": 12,
+                "margin": 5,
                 "border_focus": colors[8],
                 "border_normal": colors[0]
                 }
@@ -255,32 +262,32 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
         widget.Spacer(length = 12),
-        widget.Image(
-                 filename = "~/.config/qtile/icons/infinity-icon.png",
-                 scale = "False",
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
-                 ),
+        # widget.Image(
+        #          filename = "~/.config/qtile/icons/infinity-icon.png",
+        #          scale = "False",
+        #          mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+        #          ),
         widget.Prompt(
                  font = "Hack Nerd Font Mono",
                  fontsize=14,
                  foreground = colors[1]
         ),
         widget.GroupBox(
-                 fontsize = 12,
-                 margin_y = 5,
-                 margin_x = 8,
-                 padding_y = 0,
-                 padding_x = 1,
-                 borderwidth = 3,
-                 active = colors[8],
+                 fontsize = 15,
+                 margin_y = 6,
+                 margin_x = 1,
+                 padding_y = 1,
+                 padding_x = 2,
+                 borderwidth = 2,
+                 active = colors[6],
                  inactive = colors[9],
                  rounded = False,
-                 highlight_color = colors[2],
+                 highlight_color = colors[0],
                  highlight_method = "line",
-                 this_current_screen_border = colors[7],
-                 this_screen_border = colors [4],
-                 other_current_screen_border = colors[7],
-                 other_screen_border = colors[4],
+                 this_current_screen_border = colors[8],
+                 this_screen_border = colors [8],
+                 other_current_screen_border = colors[0],
+                 other_screen_border = colors[9],
                  ),
         widget.TextBox(
                  text = '|',
@@ -308,7 +315,7 @@ def init_widgets_list():
         widget.Volume(
                  foreground = colors[7],
                  padding = 6, 
-                 fmt = '🕫  Vol: {}',
+                 fmt = '{}',
                  ),
         widget.KeyboardLayout(
                  foreground = colors[4],
@@ -318,7 +325,7 @@ def init_widgets_list():
         widget.Clock(
                  foreground = colors[8],
                  padding = 6, 
-                 format = "⏱  %a, %b %d - %H:%M",
+                 format = " %a, %b %d - %H:%M",
                  ),
         widget.Systray(padding = 3),
         widget.Spacer(length = 8),
@@ -340,9 +347,9 @@ def init_widgets_screen2():
 # For ex: Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=24)),
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=28)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 12, 0, 12], size=28)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 12, 0, 12], size=28))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[7, 7, 1, 7], size=28)),
+            # Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 12, 0, 12], size=28)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[7, 7, 1, 7], size=28))]
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
@@ -432,7 +439,7 @@ wl_input_rules = None
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
-    subprocess.call([home + '/.local/bin/leptop_mod.sh'])
+    # subprocess.call([home + '/.local/bin/leptop_mod.sh'])
 
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this

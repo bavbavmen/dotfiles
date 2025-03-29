@@ -6,16 +6,8 @@ COLORSCHEME=DoomOne
 # lxsession &
 picom --daemon &
 nm-applet &
-"$HOME"/.local/bin/apartmen_mod.sh &
+# "$HOME"/.local/bin/apartmen_mod.sh &
 
 "$HOME"/.screenlayout/home.sh &
 sleep 1
-conky -c "$HOME"/.config/conky/qtile/01/"$COLORSCHEME".conf || echo "Couldn't start conky."
-
-### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###
-# 1. Uncomment to restore last saved wallpaper
-# xargs xwallpaper --stretch <~/.cache/wall &
-# 2. Uncomment to set a random wallpaper on login
-# find /usr/share/backgrounds/dtos-backgrounds/ -type f | shuf -n 1 | xargs xwallpaper --stretch &
-# 3. Uncomment to set wallpaper with nitrogen
-nitrogen --restore &
+# conky -c "$HOME"/.config/conky/qtile/01/"$COLORSCHEME".conf || echo "Couldn't start conky."

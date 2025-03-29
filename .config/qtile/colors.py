@@ -130,3 +130,17 @@ TomorrowNight = [
     ["#70c0ba", "#70c0ba"], # color[8]
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]
+
+Catppuccin_Mocha = [
+    ["#1e1e2e", "#1e1e2e"], # color[0] - Background
+    ["#f2d5cf", "#f2d5cf"], # color[1] - Text color
+    ["#b5b2b4", "#b5b2b4"], # color[2] - Comment/Text color
+    ["#f28fad", "#f28fad"], # color[3] - Red
+    ["#abe9b3", "#abe9b3"], # color[4] - Green
+    ["#f9e2af", "#f9e2af"], # color[5] - Yellow
+    ["#96cdfb", "#96cdfb"], # color[6] - Blue
+    ["#d4a5a5", "#d4a5a5"], # color[7] - Purple
+    ["#89dceb", "#89dceb"], # color[8] - Cyan
+    ["#6c6a6a", "#6c6a6a"] # color[9] - Dark Gray
+    ]
+
