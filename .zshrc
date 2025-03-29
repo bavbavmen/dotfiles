@@ -18,16 +18,22 @@ plugins=(zsh-autosuggestions aliases ubuntu systemadmin sudo git history ansible
 
 source $ZSH/oh-my-zsh.sh
 
+# qmk
+export QMK_HOME='~/qmk_firmware'
+
+# homebrew
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+
+
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
 export EDITOR='nvim'
 
 # my
 
 ## list dir
-alias l="eza --icons"
+alias l="exa --icons"
 alias lla="l -la"
 alias lal=lla
 alias la="l -a"
