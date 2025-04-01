@@ -1,28 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import os
 import subprocess
 from libqtile import bar, extension, hook, layout, qtile, widget
@@ -67,6 +42,7 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu"), desc="Logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "space",lazy.widget["keyboardlayout"].next_keyboard(),   desc="Next keyboard layout"),
     
     # Switch between windows
     # Some layouts like 'monadtall' only need to use j/k to move
@@ -76,7 +52,6 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -312,21 +287,24 @@ def init_widgets_list():
                  padding = 4,
                  max_chars = 40
                  ),
+        widget.Spacer(length =bar.STRETCH),
+        widget.Clock(
+                 foreground = colors[8],
+                 padding = 6, 
+                 format = "%m/%d - %H:%M",
+                 fontsize = 14,
+                 ),
+        widget.Spacer(length =bar.STRETCH),
         widget.Volume(
                  foreground = colors[7],
                  padding = 6, 
                  fmt = '{}',
                  ),
-        widget.KeyboardLayout(
-                 foreground = colors[4],
-                 padding = 6, 
-                 fmt = '⌨  Kbd: {}',
-                 ),
-        widget.Clock(
-                 foreground = colors[8],
-                 padding = 6, 
-                 format = " %a, %b %d - %H:%M",
-                 ),
+        # widget.KeyboardLayout(
+        #          foreground = colors[4],
+        #          padding = 6, 
+        #          fmt = '⌨  Kbd: {}',
+        #          ),
         widget.Systray(padding = 3),
         widget.Spacer(length = 8),
 
@@ -439,15 +417,12 @@ wl_input_rules = None
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
-    # subprocess.call([home + '/.local/bin/leptop_mod.sh'])
+    if "Seven" in subprocess.check_output("nmcli -t -f active,ssid dev wifi | egrep '^yes'"):
+        subprocess.call([home + '/.screenlayout/apartment.sh'])
+    else:
+        subprocess.call([home + '/.screenlayout/home.sh'])
 
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
+
+
 wmname = "LG3D"

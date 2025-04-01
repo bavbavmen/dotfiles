@@ -8,6 +8,7 @@ picom --daemon &
 nm-applet &
 # "$HOME"/.local/bin/apartmen_mod.sh &
 
-"$HOME"/.screenlayout/home.sh &
+# "$HOME"/.screenlayout/home.sh &
+"$HOME"/.screenlayout/apartment.sh &
 sleep 1
 # conky -c "$HOME"/.config/conky/qtile/01/"$COLORSCHEME".conf || echo "Couldn't start conky."
