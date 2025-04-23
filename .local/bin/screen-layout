@@ -1,0 +1,13 @@
+
+#!/bin/bash
+
+# Directory where the scripts are located
+script_dir="$HOME/.local/lib/screenlayout/"
+
+# Present a list of scripts using rofi
+choice=$(echo -e "apartment.sh\nhome.sh\nleptop.sh" | rofi -dmenu -p "Choose a layout")
+
+# Run the selected script if it's not empty
+if [ -n "$choice" ]; then
+    bash "$script_dir/$choice"
+fi
