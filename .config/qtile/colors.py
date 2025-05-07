@@ -131,16 +131,41 @@ TomorrowNight = [
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]
 
-Catppuccin_Mocha = [
-    ["#1e1e2e", "#1e1e2e"], # color[0] - Background
-    ["#f2d5cf", "#f2d5cf"], # color[1] - Text color
-    ["#b5b2b4", "#b5b2b4"], # color[2] - Comment/Text color
-    ["#f28fad", "#f28fad"], # color[3] - Red
-    ["#abe9b3", "#abe9b3"], # color[4] - Green
-    ["#f9e2af", "#f9e2af"], # color[5] - Yellow
-    ["#96cdfb", "#96cdfb"], # color[6] - Blue
-    ["#d4a5a5", "#d4a5a5"], # color[7] - Purple
-    ["#89dceb", "#89dceb"], # color[8] - Cyan
-    ["#6c6a6a", "#6c6a6a"] # color[9] - Dark Gray
-    ]
+Catppuccin_Mocha = {"rosewater": "#f5e0dc",
+            "flamingo": "#f2cdcd",
+            "pink": "#f5c2e7",
+            "mauve": "#cba6f7",
+            "red": "#f38ba8",
+            "maroon": "#eba0ac",
+            "peach": "#fab387",
+            "yellow": "#f9e2af",
+            "green": "#a6e3a1",
+            "teal": "#94e2d5",
+            "sky": "#89dceb",
+            "sapphire": "#74c7ec",
+            "blue": "#89b4fa",
+            "lavender": "#b4befe",
+            "text": "#cdd6f4",
+            "subtext1": "#bac2de",
+            "subtext0": "#a6adc8",
+            "overlay2": "#9399b2",
+            "overlay1": "#7f849c",
+            "overlay0": "#6c7086",
+            "surface2": "#585b70",
+            "surface1": "#45475a",
+            "surface0": "#313244",
+            "base": "#1e1e2e",
+            "mantle": "#181825",
+            "crust": "#11111b",
+                    }
+    # ["#1e1e2e", "#1e1e2e"], # color[0] - Background
+    # ["#f2d5cf", "#f2d5cf"], # color[1] - Text color
+    # ["#b5b2b4", "#b5b2b4"], # color[2] - Comment/Text color
+    # ["#f28fad", "#f28fad"], # color[3] - Red
+    # ["#abe9b3", "#abe9b3"], # color[4] - Green
+    # ["#f9e2af", "#f9e2af"], # color[5] - Yellow
+    # ["#96cdfb", "#96cdfb"], # color[6] - Blue
+    # ["#d4a5a5", "#d4a5a5"], # color[7] - Purple
+    # ["#89dceb", "#89dceb"], # color[8] - Cyan
+    # ["#6c6a6a", "#6c6a6a"] # color[9] - Dark Gray
 

@@ -4,7 +4,7 @@ COLORSCHEME=DoomOne
 
 ### AUTOSTART PROGRAMS ###
 # lxsession &
-picom --daemon &
+# picom --daemon &
 nm-applet &
 flameshot &
 # "$HOME"/.local/bin/apartmen_mod.sh &
