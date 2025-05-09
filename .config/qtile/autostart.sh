@@ -7,6 +7,7 @@ COLORSCHEME=DoomOne
 # picom --daemon &
 nm-applet &
 flameshot &
+pkill ibus &
 # "$HOME"/.local/bin/apartmen_mod.sh &
 
 # "$HOME"/.screenlayout/home.sh &

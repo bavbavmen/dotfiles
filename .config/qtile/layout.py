@@ -9,7 +9,7 @@ import colors
 from general_configs import *
 layout_theme = {"border_width": 2,
                 "margin": 0,
-                "border_focus": colors["sapphire"],
+                "border_focus": colors["blue"],
                 "border_normal": colors["overlay0"]
                 }
 

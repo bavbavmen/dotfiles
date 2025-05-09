@@ -24,6 +24,7 @@ keys = [
     Key([mod, "shift"], "p", lazy.spawn("/home/user/.local/bin/screen-layout"), desc="Logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "space",lazy.widget["keyboardlayout"].next_keyboard(),   desc="Next keyboard layout"),
+    Key([], "Print", lazy.spawn("flameshot gui"), desc="print screan"),
     
     # Switch between windows"
     # Some layouts like 'monadtall' only need to use j/k to move

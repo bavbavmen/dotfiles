@@ -76,6 +76,9 @@ alias -g L='| less'
 alias -g G='| grep'
 alias g=grep
 
+#yazi
+alias y=yazi
+
 # scripts
 bindkey '^ ' autosuggest-accept
 
