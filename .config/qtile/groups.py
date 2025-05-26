@@ -1,19 +1,25 @@
-import os
-import subprocess
-from libqtile import bar, extension, hook, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
+from libqtile.config import Group, Key
 from libqtile.lazy import lazy
-import colors
 
 from keys import keys
-from general_configs import *
+from general_configs import mod
 
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+group_layouts = [
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+]
 
 for i in range(len(group_names)):
     groups.append(
@@ -21,7 +27,8 @@ for i in range(len(group_names)):
             name=group_names[i],
             layout=group_layouts[i].lower(),
             label=group_labels[i],
-        ))
+        )
+    )
 for i in groups:
     keys.extend(
         [
@@ -48,4 +55,3 @@ for i in groups:
             ),
         ]
     )
-

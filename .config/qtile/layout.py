@@ -2,9 +2,6 @@ from libqtile import layout
 from libqtile.config import Match
 import colors
 
-
-from general_configs import colors
-
 layout_theme = {
     "border_width": 2,
     "margin": 0,
