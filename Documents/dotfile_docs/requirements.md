@@ -6,3 +6,4 @@ nemo
 qtile
 zsh
 nitrogen
+fzf
