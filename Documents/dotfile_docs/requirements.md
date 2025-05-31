@@ -10,3 +10,4 @@ fzf
 yazi
 ripgrep
 dunst
+copyq
