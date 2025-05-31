@@ -7,3 +7,5 @@ qtile
 zsh
 nitrogen
 fzf
+yazi
+ripgrep
