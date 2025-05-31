@@ -5,3 +5,4 @@ neovim
 nemo
 qtile
 zsh
+nitrogen
