@@ -9,3 +9,4 @@ nitrogen
 fzf
 yazi
 ripgrep
+dunst
