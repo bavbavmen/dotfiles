@@ -11,3 +11,4 @@ yazi
 ripgrep
 dunst
 copyq
+npm
