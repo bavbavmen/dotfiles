@@ -82,7 +82,9 @@ alias y=yazi
 # scripts
 bindkey '^ ' autosuggest-accept
 
-alias dot='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+alias dots='dot commit -am "dot save" && dot push'
+
 
 
 
