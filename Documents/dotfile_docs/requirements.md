@@ -12,3 +12,4 @@ ripgrep
 dunst
 copyq
 npm
+p7zip
