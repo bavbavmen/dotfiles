@@ -69,6 +69,7 @@ def init_widgets_list():
             fontsize=18,
         ),
         widget.Spacer(length=bar.STRETCH),
+        widget.Battery(),
         widget.Volume(
             foreground=colors["green"],
             padding=6,
